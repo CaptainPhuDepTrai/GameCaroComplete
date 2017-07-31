@@ -47,7 +47,7 @@
             // 
             // pnlChessBoard
             // 
-            this.pnlChessBoard.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlChessBoard.BackColor = System.Drawing.SystemColors.Control;
             this.pnlChessBoard.Location = new System.Drawing.Point(12, 12);
             this.pnlChessBoard.Name = "pnlChessBoard";
             this.pnlChessBoard.Size = new System.Drawing.Size(602, 504);
@@ -97,7 +97,7 @@
             // 
             // pctMark
             // 
-            this.pctMark.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pctMark.BackColor = System.Drawing.SystemColors.Control;
             this.pctMark.Location = new System.Drawing.Point(142, 11);
             this.pctMark.Name = "pctMark";
             this.pctMark.Size = new System.Drawing.Size(129, 145);

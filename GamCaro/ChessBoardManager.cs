@@ -15,32 +15,37 @@ namespace GamCaro
 
         public Panel ChessBoard { get => chessBoard; set => chessBoard = value; }
         public int CurrentPlayer { get => currentPlayer; set => currentPlayer = value; }
-        public TextBox PlayerName { get => playerName; set => playerName = value; }
-        public PictureBox PlayerMark { get => playerMark; set => playerMark = value; }
+       
+       
 
         private List<Player> Player;
 
         private int currentPlayer;
 
         private TextBox playerName;
+        public TextBox PlayerName { get => playerName; set => playerName = value; }
+
 
         private PictureBox playerMark;
+        public PictureBox PlayerMark { get => playerMark; set => playerMark = value; }
 
         #endregion
 
         #region Initialize
-        public ChessBoardManager(Panel chessBoard, TextBox playverName, PictureBox mark)
+        public ChessBoardManager(Panel chessBoard, TextBox playerName, PictureBox mark)
         {
             this.ChessBoard = chessBoard;
             this.PlayerName = playerName;
-            this.PlayerMark = playerMark;
+            this.PlayerMark = mark;
             this.Player = new List<Player>()
             {
-                new Player("tphu1" , Image.FromFile(Application.StartupPath + "\\Resources\\boy.jpg")),
-                new Player("tphu2", Image.FromFile(Application.StartupPath + "\\Resources\\girl.jpg"))
+                new Player("boy" , Image.FromFile(Application.StartupPath + "\\Resources\\boy.jpg")),
+                new Player("girl", Image.FromFile(Application.StartupPath + "\\Resources\\girl.jpg"))
             };
 
-            CurrentPlayer = 0; 
+            CurrentPlayer = 0;
+
+            ChangePlayer(); 
         }
 
         
@@ -86,12 +91,23 @@ namespace GamCaro
                 return;
             }
 
+            Mark(btn);
+            ChangePlayer();
+            
+            
+        }
+
+        private void Mark(Button btn)
+        {
             btn.BackgroundImage = Player[CurrentPlayer].Mark;
 
             CurrentPlayer = CurrentPlayer == 1 ? 0 : 1;
 
-            PlayerName.Text = Player[CurrentPlayer].Name;
+        }
 
+        private void ChangePlayer()
+        {
+            PlayerName.Text = Player[CurrentPlayer].Name;
             PlayerMark.Image = Player[CurrentPlayer].Mark;
         }
         #endregion
