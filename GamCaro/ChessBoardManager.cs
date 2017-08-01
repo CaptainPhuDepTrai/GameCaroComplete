@@ -56,12 +56,15 @@ namespace GamCaro
         #region Method
         public void DrawChessBoard()
         {
+            //tạo ma trận 2 list chồng nhau
             Matrix = new List<List<Button>>();
             Button oldButton = new Button() { Width = 0, Location = new Point(0, 0) };
+
             for (int i = 0; i < Constan.CHESS_BOARD_HEIGHT; i++)
             {
+                // tạo ra mảng mới đê lưu lại
                 Matrix.Add(new List<Button>());
-                for (int j = 0; j < Constan.CHESS_WIDTH; j++)
+                for (int j = 0; j < Constan.CHESS_BOARD_WIDTH; j++)
                 {
                     Button btn = new Button()
                     {
@@ -76,6 +79,7 @@ namespace GamCaro
 
                     ChessBoard.Controls.Add(btn);
 
+                    // add button theo hàng
                     Matrix[i].Add(btn);
 
                     oldButton = btn;
@@ -105,8 +109,7 @@ namespace GamCaro
             {
                 EndGame();
             }
-            
-            
+          
         }
         private void EndGame()
         {
@@ -116,7 +119,7 @@ namespace GamCaro
         {
             return isEndHorizontal(btn)|| isEndVertical(btn) || isEndPrimary(btn) || isEndSub(btn);
         }
-
+        // check button 
         private Point GetChessPoint(Button btn)
         {
 
@@ -128,6 +131,7 @@ namespace GamCaro
 
             return point;
         }
+        // xét ngang
         private bool isEndHorizontal(Button btn)
         {
             Point point = GetChessPoint(btn);
@@ -157,6 +161,7 @@ namespace GamCaro
             return countLeft + countRight >= 5;
         }
 
+        //xét dọc
         private bool isEndVertical(Button btn)
         {
             Point point = GetChessPoint(btn);
@@ -186,6 +191,7 @@ namespace GamCaro
             return countTop + countBottom >= 5;
         }
 
+        //chéo chính
         private bool isEndPrimary(Button btn)
         {
             Point point = GetChessPoint(btn);
@@ -222,6 +228,7 @@ namespace GamCaro
             return countTop + countBottom >= 5;
         }
 
+        // chéo phụ 
         private bool isEndSub(Button btn)
         {
             Point point = GetChessPoint(btn);

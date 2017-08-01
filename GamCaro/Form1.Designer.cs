@@ -50,14 +50,14 @@
             this.pnlChessBoard.BackColor = System.Drawing.SystemColors.Control;
             this.pnlChessBoard.Location = new System.Drawing.Point(12, 12);
             this.pnlChessBoard.Name = "pnlChessBoard";
-            this.pnlChessBoard.Size = new System.Drawing.Size(876, 514);
+            this.pnlChessBoard.Size = new System.Drawing.Size(590, 514);
             this.pnlChessBoard.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.pctbAvatar);
-            this.panel2.Location = new System.Drawing.Point(899, 14);
+            this.panel2.Location = new System.Drawing.Point(611, 14);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(292, 275);
             this.panel2.TabIndex = 1;
@@ -83,7 +83,7 @@
             this.panel4.Controls.Add(this.txtbIP);
             this.panel4.Controls.Add(this.pctMark);
             this.panel4.Controls.Add(this.txtbPlayerName);
-            this.panel4.Location = new System.Drawing.Point(901, 295);
+            this.panel4.Location = new System.Drawing.Point(613, 295);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(290, 231);
             this.panel4.TabIndex = 2;
@@ -147,7 +147,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1203, 535);
+            this.ClientSize = new System.Drawing.Size(915, 535);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlChessBoard);
