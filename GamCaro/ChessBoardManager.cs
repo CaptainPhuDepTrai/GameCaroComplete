@@ -89,7 +89,7 @@ namespace GamCaro
 
         }
 
-        private void btn_Click(object sender, EventArgs e)
+         void btn_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
 
@@ -119,12 +119,13 @@ namespace GamCaro
 
         private Point GetChessPoint(Button btn)
         {
-           
+
 
             int vertical = Convert.ToInt32(btn.Tag);
             int horizontal = Matrix[vertical].IndexOf(btn);
 
             Point point = new Point(horizontal, vertical);
+
             return point;
         }
         private bool isEndHorizontal(Button btn)
@@ -132,7 +133,6 @@ namespace GamCaro
             Point point = GetChessPoint(btn);
 
             int countLeft = 0;
-
             for (int i = point.X; i >= 0; i--)
             {
                 if (Matrix[point.Y][i].BackgroundImage == btn.BackgroundImage)
@@ -140,13 +140,10 @@ namespace GamCaro
                     countLeft++;
                 }
                 else
-                {
                     break;
-                }
             }
 
             int countRight = 0;
-
             for (int i = point.X + 1; i < Constan.CHESS_BOARD_WIDTH; i++)
             {
                 if (Matrix[point.Y][i].BackgroundImage == btn.BackgroundImage)
@@ -154,12 +151,10 @@ namespace GamCaro
                     countRight++;
                 }
                 else
-                {
                     break;
-                }
             }
 
-            return countLeft + countRight == 5;
+            return countLeft + countRight >= 5;
         }
 
         private bool isEndVertical(Button btn)
@@ -167,7 +162,6 @@ namespace GamCaro
             Point point = GetChessPoint(btn);
 
             int countTop = 0;
-
             for (int i = point.Y; i >= 0; i--)
             {
                 if (Matrix[i][point.X].BackgroundImage == btn.BackgroundImage)
@@ -175,13 +169,10 @@ namespace GamCaro
                     countTop++;
                 }
                 else
-                {
                     break;
-                }
             }
 
             int countBottom = 0;
-
             for (int i = point.Y + 1; i < Constan.CHESS_BOARD_HEIGHT; i++)
             {
                 if (Matrix[i][point.X].BackgroundImage == btn.BackgroundImage)
@@ -189,12 +180,10 @@ namespace GamCaro
                     countBottom++;
                 }
                 else
-                {
                     break;
-                }
             }
 
-            return countTop + countBottom == 5;
+            return countTop + countBottom >= 5;
         }
 
         private bool isEndPrimary(Button btn)
@@ -202,42 +191,35 @@ namespace GamCaro
             Point point = GetChessPoint(btn);
 
             int countTop = 0;
-
             for (int i = 0; i <= point.X; i++)
             {
-                if (point.X - i <0 || point.Y - i < 0)
-                {
+                if (point.X - i < 0 || point.Y - i < 0)
                     break;
-                }
-                if (Matrix[point.Y - i][point.X -i].BackgroundImage == btn.BackgroundImage)
+
+                if (Matrix[point.Y - i][point.X - i].BackgroundImage == btn.BackgroundImage)
                 {
                     countTop++;
                 }
                 else
-                {
                     break;
-                }
             }
 
             int countBottom = 0;
-
             for (int i = 1; i <= Constan.CHESS_BOARD_WIDTH - point.X; i++)
             {
                 if (point.Y + i >= Constan.CHESS_BOARD_HEIGHT || point.X + i >= Constan.CHESS_BOARD_WIDTH)
-                {
                     break;
-                }
-                if (Matrix[point.Y +i][point.X + i].BackgroundImage == btn.BackgroundImage)
+
+                if (Matrix[point.Y + i][point.X + i].BackgroundImage == btn.BackgroundImage)
                 {
                     countBottom++;
                 }
                 else
-                {
                     break;
-                }
             }
 
-            return countTop + countBottom == 5;
+
+            return countTop + countBottom >= 5;
         }
 
         private bool isEndSub(Button btn)
@@ -245,42 +227,34 @@ namespace GamCaro
             Point point = GetChessPoint(btn);
 
             int countTop = 0;
-
             for (int i = 0; i <= point.X; i++)
             {
                 if (point.X + i > Constan.CHESS_BOARD_WIDTH || point.Y - i < 0)
-                {
                     break;
-                }
+
                 if (Matrix[point.Y - i][point.X + i].BackgroundImage == btn.BackgroundImage)
                 {
                     countTop++;
                 }
                 else
-                {
                     break;
-                }
             }
 
             int countBottom = 0;
-
             for (int i = 1; i <= Constan.CHESS_BOARD_WIDTH - point.X; i++)
             {
-                if (point.Y + i >= Constan.CHESS_BOARD_HEIGHT || point.X - i <0)
-                {
+                if (point.Y + i >= Constan.CHESS_BOARD_HEIGHT || point.X - i < 0)
                     break;
-                }
+
                 if (Matrix[point.Y + i][point.X - i].BackgroundImage == btn.BackgroundImage)
                 {
                     countBottom++;
                 }
                 else
-                {
                     break;
-                }
             }
 
-            return countTop + countBottom == 5;
+            return countTop + countBottom >= 5;
         }
 
         private void Mark(Button btn)
