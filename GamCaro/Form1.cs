@@ -20,12 +20,25 @@ namespace GamCaro
         {
             InitializeComponent();
             ChessBoard = new ChessBoardManager(pnlChessBoard, txtbPlayerName, pctMark);
-            ChessBoard.DrawChessBoard();
+
+            NewGame();
             
               
         }
 
        
+        void NewGame()
+        {
+            ChessBoard.DrawChessBoard();
+        }
+
+        // thoat game trong menu 
+        void QuitGame()
+        {
+            Application.Exit();
+
+        }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -50,6 +63,33 @@ namespace GamCaro
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewGame();
+        }
+
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuitGame();
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        //close 
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Are you wanna quit", "gg", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)      
+            e.Cancel = true;
         }
     }
 }

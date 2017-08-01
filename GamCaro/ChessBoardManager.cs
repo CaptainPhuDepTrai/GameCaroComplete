@@ -45,9 +45,7 @@ namespace GamCaro
                 new Player("girl", Image.FromFile(Application.StartupPath + "\\Resources\\girl.jpg"))
             };
 
-            CurrentPlayer = 0;
-
-            ChangePlayer(); 
+            
         }
 
         
@@ -56,6 +54,14 @@ namespace GamCaro
         #region Method
         public void DrawChessBoard()
         {
+            ChessBoard.Enabled = true;
+            // clear bảng, player khi tạo mới
+            ChessBoard.Controls.Clear();
+
+            CurrentPlayer = 0;
+
+            ChangePlayer();
+
             //tạo ma trận 2 list chồng nhau
             Matrix = new List<List<Button>>();
             Button oldButton = new Button() { Width = 0, Location = new Point(0, 0) };
@@ -169,7 +175,7 @@ namespace GamCaro
             int countTop = 0;
             for (int i = point.Y; i >= 0; i--)
             {
-                if (Matrix[i][point.X].BackgroundImage == btn.BackgroundImage)
+                 if (Matrix[i][point.X].BackgroundImage == btn.BackgroundImage)
                 {
                     countTop++;
                 }
@@ -264,6 +270,7 @@ namespace GamCaro
             return countTop + countBottom >= 5;
         }
 
+        // đnáh đấu ng đánh caro 
         private void Mark(Button btn)
         {
             btn.BackgroundImage = Player[CurrentPlayer].Mark;
@@ -271,7 +278,7 @@ namespace GamCaro
             CurrentPlayer = CurrentPlayer == 1 ? 0 : 1;
 
         }
-
+        // thay đổi người chơi mỗi lượt 
         private void ChangePlayer()
         {
             PlayerName.Text = Player[CurrentPlayer].Name;

@@ -39,16 +39,21 @@
             this.txtbIP = new System.Windows.Forms.TextBox();
             this.pctMark = new System.Windows.Forms.PictureBox();
             this.txtbPlayerName = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbAvatar)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctMark)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlChessBoard
             // 
             this.pnlChessBoard.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlChessBoard.Location = new System.Drawing.Point(12, 12);
+            this.pnlChessBoard.Location = new System.Drawing.Point(12, 27);
             this.pnlChessBoard.Name = "pnlChessBoard";
             this.pnlChessBoard.Size = new System.Drawing.Size(590, 514);
             this.pnlChessBoard.TabIndex = 0;
@@ -57,9 +62,9 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.pctbAvatar);
-            this.panel2.Location = new System.Drawing.Point(611, 14);
+            this.panel2.Location = new System.Drawing.Point(611, 27);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(292, 275);
+            this.panel2.Size = new System.Drawing.Size(297, 277);
             this.panel2.TabIndex = 1;
             // 
             // pctbAvatar
@@ -67,9 +72,9 @@
             this.pctbAvatar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pctbAvatar.BackColor = System.Drawing.SystemColors.Control;
             this.pctbAvatar.Image = global::GamCaro.Properties.Resources.caro;
-            this.pctbAvatar.Location = new System.Drawing.Point(0, 2);
+            this.pctbAvatar.Location = new System.Drawing.Point(2, 3);
             this.pctbAvatar.Name = "pctbAvatar";
-            this.pctbAvatar.Size = new System.Drawing.Size(292, 269);
+            this.pctbAvatar.Size = new System.Drawing.Size(292, 274);
             this.pctbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctbAvatar.TabIndex = 0;
             this.pctbAvatar.TabStop = false;
@@ -83,7 +88,7 @@
             this.panel4.Controls.Add(this.txtbIP);
             this.panel4.Controls.Add(this.pctMark);
             this.panel4.Controls.Add(this.txtbPlayerName);
-            this.panel4.Location = new System.Drawing.Point(613, 295);
+            this.panel4.Location = new System.Drawing.Point(611, 328);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(290, 231);
             this.panel4.TabIndex = 2;
@@ -143,24 +148,65 @@
             this.txtbPlayerName.Size = new System.Drawing.Size(130, 20);
             this.txtbPlayerName.TabIndex = 0;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(915, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // menuToolStripMenuItem
+            // 
+            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newGameToolStripMenuItem,
+            this.quitToolStripMenuItem});
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.menuToolStripMenuItem.Text = "Menu";
+            this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
+            // 
+            // newGameToolStripMenuItem
+            // 
+            this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newGameToolStripMenuItem.Text = "New Game";
+            this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
+            // 
+            // quitToolStripMenuItem
+            // 
+            this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quitToolStripMenuItem.Text = "Quit";
+            this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 535);
+            this.ClientSize = new System.Drawing.Size(915, 571);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlChessBoard);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Game Caro LAN";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctbAvatar)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctMark)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -176,6 +222,10 @@
         private System.Windows.Forms.TextBox txtbIP;
         private System.Windows.Forms.PictureBox pctMark;
         private System.Windows.Forms.TextBox txtbPlayerName;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
     }
 }
 
