@@ -54,8 +54,8 @@ namespace GamCaro
         #endregion
 
         #region Both
-        public string IP = "127.0.0.1";
-        public int PORT = 9999;
+        public string IP = "192.168.1.10";
+        public int PORT = 8086;
         public const int BUFFER = 1024;
         public bool isServer = true;
 
