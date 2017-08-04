@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D418B306-5D1F-478A-97D1-65BD0284BA93}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>GamCaro</RootNamespace>
-    <AssemblyName>GamCaro</AssemblyName>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GameCaro</RootNamespace>
+    <AssemblyName>GameCaro</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,9 +32,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChessBoardManager.cs" />
-    <Compile Include="Constan.cs" />
+    <Compile Include="Cons.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,8 +55,10 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Player.cs" />
+    <Compile Include="PlayInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SocketData.cs" />
     <Compile Include="SocketManager.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -87,19 +87,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\avt.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\boy.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\caro.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\girl.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="icon.ico" />
+    <Content Include="pictures\avt.PNG" />
+    <Content Include="pictures\circle%281%29.png" />
+    <Content Include="pictures\circle%282%29.png" />
+    <Content Include="pictures\circle%283%29.png" />
+    <Content Include="pictures\close %281%29.png" />
+    <Content Include="pictures\close %282%29.png" />
+    <Content Include="pictures\close %283%29.png" />
+    <Content Include="pictures\close.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

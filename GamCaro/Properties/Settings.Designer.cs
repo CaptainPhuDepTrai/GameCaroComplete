@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GamCaro.Properties
+namespace GameCaro.Properties
 {
 
 

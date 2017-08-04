@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace GamCaro
+namespace GameCaro
 {
     public class SocketManager
     {
@@ -54,8 +54,8 @@ namespace GamCaro
         #endregion
 
         #region Both
-        public string IP = "192.168.1.10";
-        public int PORT = 8086;
+        public string IP = "127.0.0.1";
+        public int PORT = 9999;
         public const int BUFFER = 1024;
         public bool isServer = true;
 
@@ -84,9 +84,9 @@ namespace GamCaro
         {
             return target.Receive(data) == 1 ? true : false;
         }
-    
-        /// Nén đối tượng thành mảng byte[]
-        
+   
+        // Nén đối tượng thành mảng byte[]
+       
         public byte[] SerializeData(Object o)
         {
             MemoryStream ms = new MemoryStream();
@@ -95,9 +95,8 @@ namespace GamCaro
             return ms.ToArray();
         }
 
-   
-        /// Giải nén mảng byte[] thành đối tượng object
-
+       
+        // Giải nén mảng byte[] thành đối tượng object
         
         public object DeserializeData(byte[] theByteArray)
         {
@@ -107,9 +106,9 @@ namespace GamCaro
             return bf1.Deserialize(ms);
         }
 
-        
+       
         /// Lấy ra IP V4 của card mạng đang dùng
-        
+      
         public string GetLocalIPv4(NetworkInterfaceType _type)
         {
             string output = "";
