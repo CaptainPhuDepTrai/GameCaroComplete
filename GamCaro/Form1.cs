@@ -173,7 +173,7 @@ namespace GameCaro
 
                     ProcessData(data);
                 }
-                catch (Exception e)
+                catch 
                 {
                 }
             });
