@@ -228,9 +228,6 @@ namespace GameCaro
 
         #endregion
 
-        private void txbPlayerName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
