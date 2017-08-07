@@ -287,7 +287,7 @@ namespace GameCaro
                     break;
             }
 
-            return countLeft + countRight == 5;
+            return countLeft + countRight >= 5;
         }
         private bool isEndVertical(Button btn)
         {
@@ -315,7 +315,7 @@ namespace GameCaro
                     break;
             }
 
-            return countTop + countBottom == 5;
+            return countTop + countBottom >= 5;
         }
         private bool isEndPrimary(Button btn)
         {
@@ -349,7 +349,7 @@ namespace GameCaro
                     break;
             }
 
-            return countTop + countBottom == 5;
+            return countTop + countBottom >= 5;
         }
         private bool isEndSub(Button btn)
         {
@@ -383,7 +383,7 @@ namespace GameCaro
                     break;
             }
 
-            return countTop + countBottom == 5;
+            return countTop + countBottom >= 5;
         }
 
         private void Mark(Button btn)
