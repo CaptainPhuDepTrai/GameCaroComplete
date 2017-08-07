@@ -386,6 +386,7 @@ namespace GameCaro
             return countTop + countBottom >= 5;
         }
 
+
         private void Mark(Button btn)
         {
             btn.BackgroundImage = Player[CurrentPlayer].Mark;
