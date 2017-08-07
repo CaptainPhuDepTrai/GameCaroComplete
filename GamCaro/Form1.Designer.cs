@@ -41,10 +41,10 @@
             this.txbPlayerName = new System.Windows.Forms.TextBox();
             this.tmCoolDown = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+          
+            this.menuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.newGameToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctbAvatar)).BeginInit();
             this.panel3.SuspendLayout();
@@ -142,7 +142,6 @@
             this.txbPlayerName.ReadOnly = true;
             this.txbPlayerName.Size = new System.Drawing.Size(138, 20);
             this.txbPlayerName.TabIndex = 0;
-           
             // 
             // tmCoolDown
             // 
@@ -150,6 +149,8 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(740, 24);
@@ -158,34 +159,31 @@
             // 
             // menuToolStripMenuItem
             // 
-            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newGameToolStripMenuItem,
-            this.undoToolStripMenuItem,
-            this.quitToolStripMenuItem});
-            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.menuToolStripMenuItem.Text = "Menu";
+           
+       
+          
+            // menuToolStripMenuItem1
             // 
-            // newGameToolStripMenuItem
+            this.menuToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newGameToolStripMenuItem1,
+            this.quitToolStripMenuItem1});
+            this.menuToolStripMenuItem1.Name = "menuToolStripMenuItem1";
+            this.menuToolStripMenuItem1.Size = new System.Drawing.Size(50, 20);
+            this.menuToolStripMenuItem1.Text = "Menu";
             // 
-            this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.newGameToolStripMenuItem.Text = "New Game";
-            this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
+            // newGameToolStripMenuItem1
             // 
-            // undoToolStripMenuItem
+            this.newGameToolStripMenuItem1.Name = "newGameToolStripMenuItem1";
+            this.newGameToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.newGameToolStripMenuItem1.Text = "New Game";
+            this.newGameToolStripMenuItem1.Click += new System.EventHandler(this.newGameToolStripMenuItem1_Click);
             // 
-            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.undoToolStripMenuItem.Text = "Undo";
-            this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
+            // quitToolStripMenuItem1
             // 
-            // quitToolStripMenuItem
-            // 
-            this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.quitToolStripMenuItem.Text = "Quit";
-            this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
+            this.quitToolStripMenuItem1.Name = "quitToolStripMenuItem1";
+            this.quitToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.quitToolStripMenuItem1.Text = "Quit";
+            this.quitToolStripMenuItem1.Click += new System.EventHandler(this.quitToolStripMenuItem1_Click);
             // 
             // Form1
             // 
@@ -227,10 +225,9 @@
         private System.Windows.Forms.ProgressBar prcbCoolDown;
         private System.Windows.Forms.Timer tmCoolDown;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem1;
     }
 }
 

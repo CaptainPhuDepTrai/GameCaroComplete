@@ -46,15 +46,14 @@ namespace GameCaro
         {
             tmCoolDown.Stop();
             pnlChessBoard.Enabled = false;
-            undoToolStripMenuItem.Enabled = false;
+          
     
         }
 
         void NewGame()
         {
             prcbCoolDown.Value = 0;
-            tmCoolDown.Stop();
-            undoToolStripMenuItem.Enabled = true;
+            tmCoolDown.Stop();     
             ChessBoard.DrawChessBoard();
         }
 
@@ -77,8 +76,7 @@ namespace GameCaro
             prcbCoolDown.Value = 0;
 
             socket.Send(new SocketData((int)SocketCommand.SEND_POINT, "", e.ClickedPoint));
-
-            undoToolStripMenuItem.Enabled = false;
+         
 
             Listen();
         }
@@ -101,19 +99,14 @@ namespace GameCaro
             }
         }
 
-        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
+        private void newGameToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             NewGame();
             socket.Send(new SocketData((int)SocketCommand.NEW_GAME, "", new Point()));
-            pnlChessBoard.Enabled = true;   
+            pnlChessBoard.Enabled = true;
         }
 
-        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Undo();
-        }
-
-        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void quitToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Quit();
         }
@@ -202,7 +195,7 @@ namespace GameCaro
                         pnlChessBoard.Enabled = true;
                         tmCoolDown.Start();
                         ChessBoard.OtherPlayerMark(data.Point);
-                        undoToolStripMenuItem.Enabled = true;
+                      
                     }));
                     break;
                 case (int)SocketCommand.UNDO:
@@ -226,8 +219,9 @@ namespace GameCaro
             Listen();
         }
 
+
         #endregion
 
-        
+       
     }
 }
