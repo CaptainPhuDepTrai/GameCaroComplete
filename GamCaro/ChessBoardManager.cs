@@ -314,7 +314,6 @@ namespace GameCaro
                 else
                     break;
             }
-
             return countTop + countBottom >= 5;
         }
         private bool isEndPrimary(Button btn)

@@ -41,7 +41,7 @@
             this.txbPlayerName = new System.Windows.Forms.TextBox();
             this.tmCoolDown = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-          
+
             this.menuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.newGameToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -159,9 +159,9 @@
             // 
             // menuToolStripMenuItem
             // 
-           
-       
-          
+
+
+
             // menuToolStripMenuItem1
             // 
             this.menuToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -230,4 +230,3 @@
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem1;
     }
 }
-
